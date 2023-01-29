@@ -72,8 +72,8 @@ a:focus {
 /**********************************/
 .top-bar {
     position: relative;
-    height: 60px;
-    background: #1d2434;
+    height: 50px;
+    background: #000;
 }
 
 .top-bar .top-bar-left {
@@ -81,6 +81,10 @@ a:focus {
     align-items: center;
     justify-content: flex-start;
 }
+
+/* .top-bar .top-bar-left img {
+    width: 50px;
+} */
 
 .top-bar .top-bar-right {
     display: flex;
@@ -174,6 +178,7 @@ a:focus {
     font-size: 45px;
     line-height: 0px;
     font-weight: 600;
+    font-family: sans-serif;
 }
 
 .navbar .navbar-brand span {
@@ -210,15 +215,15 @@ a:focus {
     .navbar {
         position: absolute;
         width: 100%;
-        top: 60px;
+        /* top: 60px; */
         padding: 20px 60px;
-        background: rgba(0, 0, 0, .1) !important;
+        background: rgb(54 55 56) !important;
         z-index: 9;
     }
     
     .navbar.nav-sticky {
         padding: 10px 60px;
-        background: #1d2434 !important;
+        background: rgb(54 55 56) !important;
     }
     
     .navbar a.nav-link {
@@ -232,7 +237,7 @@ a:focus {
 @media (max-width: 991.98px) {   
     .navbar {
         padding: 15px;
-        background: #1d2434 !important;
+        background: rgb(54 55 56) !important;
     }
     
     .navbar a.nav-link {
@@ -253,7 +258,7 @@ a:focus {
     width: 100%;
     margin-bottom: 45px;
     height: calc(100vh - 60px);
-    background: #D5B981;
+    background: #000;
     overflow: hidden;
 }
 
@@ -263,17 +268,22 @@ a:focus {
 
 .hero .hero-image {
     position: relative;
-    text-align: right;
+    /* text-align: right; */
+    /* margin-top: 40px; */
+    width: 100%;
+    object-fit: cover;
 }
 
 .hero .hero-image img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 100%;
+    max-height: 100%;
+    /* border-radius: 10%; */
+    opacity: 0.4;
 }
 
 .hero .hero-text {
     position: relative;
-    padding-left: 75px;
+    /* padding-left: 75px; */
     height: calc(100vh - 60px);
     display: flex;
     align-items: flex-start;
@@ -282,10 +292,16 @@ a:focus {
 }
 
 .hero .hero-text h1 {
-    color: #1d2434;
-    font-size: 50px;
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-size: 33px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin: 20px 0 0 20px;
+}
+
+.hero .hero-text h1 span {
+    margin-left: 50px;
 }
 
 .hero .hero-text p {
@@ -478,12 +494,12 @@ a:focus {
     margin-bottom: 45px;
     padding: 150px 0 90px 0;
     text-align: center;
-    background: #D5B981;
+    background: #000;
 }
 
 .page-header h2 {
     position: relative;
-    color: #1d2434;
+    color: #fff;
     font-size: 60px;
     font-weight: 700;
 }
