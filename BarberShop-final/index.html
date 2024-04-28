@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Level Barbershop - Unlock Your True Style Potential" />
+    <meta name="keywords" content="barbershop, haircuts, style, grooming" />
+    <title>Level Barbershop</title>
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(95569760, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+      });
+    </script>
+
+    <noscript
+      ><div>
+        <img src="https://mc.yandex.ru/watch/95569760" style="position: absolute; left: -9999px" alt="" /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <a href="/" class="navbar-brand">
+          <img id="lazy-load" loading="lazy" src="./img/level_white.png" width="110px" style="object-fit: cover; width:
+          140px; height: 90px;"" />
+        </a>
+        <div class="d-flex gap-1">
+          <div class="language-switcher">
+            <button class="language-button" data-lang="selected-en">
+              <img
+                class="language-icon"
+                data-lang="ru"
+                id="selected-flag-image"
+                src="./img/flags/russia_256.png"
+                alt="Russian"
+              />
+            </button>
+            <div class="language-dropdown">
+              <ul class="language-list">
+                <li>
+                  <button class="language-button" data-lang="en">
+                    <img
+                      data-lang="en"
+                      class="language-icon"
+                      src="./img/flags/united_kingdom_256.png"
+                      alt="United Kingdom"
+                    />
+                  </button>
+                </li>
+                <li>
+                  <button class="language-button" data-lang="ru">
+                    <img class="language-icon" data-lang="ru" src="./img/flags/russia_256.png" alt="Russian" />
+                  </button>
+                </li>
+                <li>
+                  <button class="language-button" data-lang="am">
+                    <img class="language-icon" data-lang="am" src="img/flags/armenia_256.png" alt="Armenia" />
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button type=" button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ms-auto p-4 p-lg-0">
+            <li class="nav-item">
+              <a id="nav-working-hours" href="#workingHours" class="nav-link">Working Hours</a>
+            </li>
+            <li class="nav-item"><a id="nav-price-list" href="#priceList" class="nav-link">Price List</a></li>
+            <li class="nav-item"><a id="nav-contact" href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Navbar End -->
+
+    <main>
+      <!-- Carousel Start -->
+      <section class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                id="lazy-load"
+                loading="lazy"
+                decoding="async"
+                style="object-fit: cover; animation: move-hide-4 20s linear infinite; height: 595px"
+                class="w-100"
+                src="img/level-bg-2.webp"
+                alt="Image"
+              />
+              <div class="carousel-caption d-flex align-items-center justify-content-center text-start">
+                <div class="mx-sm-5 px-5" style="max-width: 900px">
+                  <h1 id="unlockStyle" class="display-4 text-white text-uppercase mb-4 animated slideInDown lb-title">
+                    Unlock Your True Style Potential with Level Barbershop
+                  </h1>
+                  <div class="d-flex align-items-center">
+                    <i class="fa fa-map-marker-alt me-3"></i>
+                    <h4 class="text-white animated mb-0 slideInDown lb-address">
+                      <span id="vardanats">Vardanants</span> 15/4, <br /><span id="messier53">Messier 53 Hotel</span>
+                      <span id="floor_2">- 2nd floor</span>
+                    </h4>
+                  </div>
+                  <h4 class="text-white mt-4 animated slideInDown">
+                    <i class="fa fa-phone-alt me-3"></i>+374 98 494648
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                style="object-fit: cover; animation: move-hide-4 20s linear infinite; height: 630px"
+                class="w-100"
+                src="img/level-bg-3.webp"
+                alt="Image"
+                id="lazy-load"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="carousel-caption d-flex align-items-center justify-content-center text-start">
+                <div class="mx-sm-5 px-5" style="max-width: 900px">
+                  <h1 class="display-4 text-white text-uppercase mb-4 animated slideInDown lb-title">
+                    Luxury Haircut at Affordable Price
+                  </h1>
+                  <div class="d-flex align-items-center">
+                    <i class="fa fa-map-marker-alt markerIcon me-3"></i>
+                    <h4 class="text-white animated mb-0 slideInDown lb-address">
+                      <span id="vardanats">Vardanants</span> 15/4, <br /><span id="messier53">Messier 53 Hotel</span>
+                      <span id="floor_2">- 2nd floor</span>
+                    </h4>
+                  </div>
+                  <h4 class="text-white mt-4 animated slideInDown">
+                    <i class="fa fa-phone-alt me-3" style="font-size: 15px"></i>+374 98 494648
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <!-- Carousel End -->
+
+      <!-- Price Start -->
+      <section id="priceList" class="container-xxl pt-5">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+              <div class="h-100 d-flex flex-column justify-content-center p-3">
+                <p id="price-plan-title" class="d-inline-flex bg-dark py-1 px-4 me-auto">Price & Plan</p>
+                <h4 id="services-title" class="text-uppercase mb-4">Check Out Our Barber Services And Prices</h4>
+                <div>
+                  <div class="d-flex justify-content-between border-bottom py-2">
+                    <h6 class="w-75 text-uppercase mb-0"></h6>
+                    <div class="d-flex justify-content-end ps-sm-5 align-items-center gap-3 w-35">
+                      <h6 id="top-plan" class="text-uppercase mb-0">Pro(֏)</h6>
+                      <h6 id="top-plan" class="text-uppercase mb-0">Top(֏)</h6>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="simpleHaircut" class="w-75 text-uppercase mb-0">СТРИЖКА ВОЛОС</h6>
+                    <div class="d-flex justify-content-end align-items-center gap-4 w-35">
+                      <p class="text-uppercase">6.000</p>
+                      <p class="text-uppercase">8.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="haircutMachine" class="w-75 text-uppercase mb-0">СТРИЖКА ВОЛОС МАШИНКОЙ</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">4.000</p>
+                      <p class="text-uppercase">6.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="haircutScissors" class="w-75 text-uppercase mb-0">СТРИЖКА НОЖНИЦАМИ</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">7.000</p>
+                      <p class="text-uppercase">9.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 style="word-break: break-word" id="beardModel" class="w-75 text-uppercase mb-0">
+                      МОДЕЛИРОВАНИЕ БОРОДЫ
+                    </h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">5.000</p>
+                      <p class="text-uppercase">7.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 style="word-break: break-word" id="royalShaveFace" class="w-75 text-uppercase mb-0">
+                      КОРОЛЕВСКОЕ БРИТЬЕ ЛИЦА ОПАСНОЙ БРИТВОЙ
+                    </h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">7.000</p>
+                      <p class="text-uppercase">9.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 style="word-break: break-word" id="royalShaveHead" class="w-75 text-uppercase mb-0">
+                      КОРОЛЕВСКОЕ БРИТЬЕ ГОЛОВЫ ОПАСНОЙ БРИТВОЙ
+                    </h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-3">
+                      <p class="text-uppercase">8.000</p>
+                      <p class="text-uppercase">10.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="hairTone" class="w-75 text-uppercase mb-0">ТОНИРОВАНИЕ ВОЛОС</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">5.000</p>
+                      <p class="text-uppercase">7.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="beardTone" class="w-75 text-uppercase mb-0">ТОНИРОВАНИЕ БОРОДЫ</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">4.000</p>
+                      <p class="text-uppercase">6.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="blowOut" class="text-uppercase w-75 mb-0">УКЛАДКА ВОЛОС</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">2.000</p>
+                      <p class="text-uppercase">3.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="beardStyle" class="w-75 text-uppercase mb-0">УКЛАДКА БОРОДЫ</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">2.000</p>
+                      <p class="text-uppercase">2.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="okontovkaHair" class="w-75 text-uppercase mb-0">ОКАНТОВКА ВОЛОС</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">2.000</p>
+                      <p class="text-uppercase">3.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="okontovkaBeard" class="w-75 text-uppercase mb-0">ОКАНТОВКА БОРОДЫ</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">3.000</p>
+                      <p class="text-uppercase">4.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="spaFace" class="w-75 text-uppercase mb-0">СПА ДЛЯ ЛИЦА</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">7.000</p>
+                      <p class="text-uppercase">7.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="blackMask" class="w-75 text-uppercase mb-0">ЧЕРНАЯ МАСКА</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">5.000</p>
+                      <p class="text-uppercase">5.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="patches" class="w-75 text-uppercase mb-0">ПАТЧИ</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">2.000</p>
+                      <p class="text-uppercase">2.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="wax" class="w-75 text-uppercase mb-0">ВОСКОВАЯ ЭПИЛЯЦИЯ</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">2.000</p>
+                      <p class="text-uppercase">2.000</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="tattooHair" class="w-75 text-uppercase mb-0">РИСУНОК НА ВОЛОСАХ</h6>
+                    <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                      <p class="text-uppercase">-- --</p>
+                      <p class="text-uppercase">2.000</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="servicesContainer"></div>
+              </div>
+            </div>
+            <div class="col-lg-7 wow fadeIn" data-wow-delay="0.5s">
+              <div class="h-100">
+                <img
+                  id="lazy-load"
+                  loading="lazy"
+                  decoding="async"
+                  style="width: 100%"
+                  class="img-fluid"
+                  src="img/level-bg-1.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Complex Price -->
+      <section class="container-xxl">
+        <div class="container">
+          <div class="row g-0">
+            <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+              <div class="h-100 d-flex flex-column justify-content-center p-3">
+                <p id="complex" class="d-inline-flex bg-dark py-1 px-4 me-auto">Complex</p>
+                <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                  <h6 style="word-break: break-word" id="haircutandBeard" class="w-75 text-uppercase mb-0">
+                    HAIRCUT AND BEARD TRIM
+                  </h6>
+                  <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                    <p class="text-uppercase">10.000</p>
+                    <p class="text-uppercase">14.000</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                  <h6 style="word-break: break-word" id="haicutBeardScissors" class="w-75 text-uppercase mb-0">
+                    СТРИЖКА НОЖНИЦАМИ И МОДЕЛИРОВАНИЕ БОРОДЫ
+                  </h6>
+                  <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                    <p class="text-uppercase">11.000</p>
+                    <p class="text-uppercase">15.000</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                  <h6 style="word-break: break-word" id="royalShave" class="w-70 text-uppercase mb-0">
+                    КОРОЛЕВСКОЕ БРИТЬЕ ЛИЦА И ГОЛОВЫ ОПАСНОЙ БРИТВОЙ
+                  </h6>
+                  <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                    <p class="text-uppercase">13.000</p>
+                    <p class="text-uppercase">15.000</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                  <h6 style="word-break: break-word" id="haircutDadSon" class="w-70 text-uppercase mb-0">
+                    СТРИЖКА ПАПА И СЫН(СЕМЕЙНАЯ)
+                  </h6>
+                  <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                    <p class="text-uppercase">11.000</p>
+                    <p class="text-uppercase">14.000</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                  <h6 style="word-break: break-word" id="complexHaircutTone" class="w-70 text-uppercase mb-0">
+                    КОМПЛЕККС СТРИЖКА И КОМПЛЕКС ТОНИРОВАНИЕ
+                  </h6>
+                  <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                    <p class="text-uppercase">17.000</p>
+                    <p class="text-uppercase">19.000</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                  <h6 style="word-break: break-word" id="toneBeardandHair" class="w-75 text-uppercase mb-0">
+                    ТОНИРОВАНИЕ БОРОДЫ И ВОЛОС
+                  </h6>
+                  <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                    <p class="text-uppercase">8.000</p>
+                    <p class="text-uppercase">12.000</p>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                  <h6 style="word-break: break-word" id="okontovkaBeardHair" class="w-75 text-uppercase mb-0">
+                    ОКАНТОВКА БОРОДЫ И ВОЛОС
+                  </h6>
+                  <div class="d-flex justify-content-end align-items-center w-35 gap-4">
+                    <p class="text-uppercase">4.000</p>
+                    <p class="text-uppercase">6.000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 wow fadeIn" data-wow-delay="0.5s">
+              <div class="h-100">
+                <img
+                  id="lazy-load"
+                  style="width: 100%"
+                  loading="lazy"
+                  decoding="async"
+                  class="img-fluid"
+                  src="img/level-bg-4.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Price End -->
+
+      <!-- Working Hours Start -->
+      <section class="container-xxl py-5">
+        <div id="workingHours" class="container">
+          <div class="row g-0">
+            <div class="col-lg-8 wow fadeIn" data-wow-delay="0.1s">
+              <div class="h-100">
+                <img
+                  id="lazy-load"
+                  loading="lazy"
+                  decoding="async"
+                  class="img-fluid"
+                  src="img/level-bg-5.webp"
+                  alt="working hours"
+                />
+              </div>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+              <div class="h-100 d-flex flex-column justify-content-center p-3">
+                <p id="working-hours" class="d-inline-flex bg-dark py-1 px-4 me-auto">Working Hours</p>
+                <h4 class="mb-4" id="barber-waiting">Professional Barbers Are Waiting For You</h4>
+                <div id="date">
+                  <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+                    <h6 id="monday" class="text-uppercase mb-0">Monday</h6>
+                    <span class="text-uppercase">10 AM - 09 PM</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="tuesday" class="text-uppercase mb-0">Tuesday</h6>
+                    <span class="text-uppercase">10 AM - 09 PM</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="wednesday" class="text-uppercase mb-0">Wednesday</h6>
+                    <span class="text-uppercase">10 AM - 09 PM</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="thursday" class="text-uppercase mb-0">Thursday</h6>
+                    <span class="text-uppercase">10 AM - 09 PM</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="friday" class="text-uppercase mb-0">Friday</h6>
+                    <span class="text-uppercase">10 AM - 09 PM</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="sat" class="text-uppercase mb-0">Saturday</h6>
+                    <span class="text-uppercase">10 AM - 09 PM</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                    <h6 id="sun" class="text-uppercase mb-0">Sunday</h6>
+                    <span class="text-uppercase">10 AM - 09 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Working Hours End -->
+
+      <section>
+        <iframe
+          id="map"
+          style="filter: invert(90%) hue-rotate(180deg) grayscale(1); width: 100%; border: 0"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12194.096435688132!2d44.5210314!3d40.1751482!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd33c73a0f31%3A0xd5559958f516a21a!2sLevel%20Barbershop!5e0!3m2!1sru!2sam!4v1698428096668!5m2!1sru!2sam"
+          width="600"
+          height="450"
+          frameborder="0"
+          aria-hidden="false"
+          tabindex="0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+    </main>
+    <!-- Footer Start -->
+    <footer class="container-fluid text-light footer mt-0 wow fadeIn" data-wow-delay="0.1s">
+      <div id="contact" class="container pb-5">
+        <div class="row">
+          <div class="d-flex gap-4 justify-content-between col-lg-12 col-md-12 col-sm-12 pt-5" style="width: 100%">
+            <div class="d-flex flex-column pt-1 m-n1">
+              <h4 id="getInTouch" class="text-uppercase mb-4">Get In Touch</h4>
+              <div class="d-flex gap-1 pt-1">
+                <a
+                  class="btn btn-square btn-dark text-white m-1"
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=100078860423470"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  class="btn btn-square btn-dark text-white m-1"
+                  target="_blank"
+                  href="https://www.youtube.com/@levelbarbershop"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a
+                  class="btn btn-square btn-dark text-white m-1"
+                  target="_blank"
+                  href="https://instagram.com/level_barbershop_evn?igshid=MzRlODBiNWFlZA=="
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+            <div class="d-flex flex-column pt-1 m-n1">
+              <h4 class="text-uppercase mb-4" id="address">Address</h4>
+              <div class="d-flex flex-column gap-1">
+                <div class="d-flex align-items-center mb-2">
+                  <div class="btn-square bg-dark flex-shrink-0 me-3">
+                    <span class="fa fa-map-marker-alt text-white"></span>
+                  </div>
+                  <span class="fs-12px"
+                    ><span id="vardanats">Vardanants</span> 15/4, <br />Messier 53 Hotel
+                    <span id="floor_2">- 2nd floor</span></span
+                  >
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <div class="btn-square bg-dark flex-shrink-0 me-3">
+                    <span class="fa fa-phone-alt text-white"></span>
+                  </div>
+                  <span class="fs-12px">+374 98 494648</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="btn-square bg-dark flex-shrink-0 me-3">
+                    <span class="fa fa-envelope-open text-white"></span>
+                  </div>
+                  <span class="fs-12px">beauty.level11@gmail.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <button class="book-button" id="scale-up-center">
+      <a
+        target="_blank"
+        href="https://b766428.alteg.io/?fbclid=PAAaZmci_9950s3zz5zCNm3nFwgk3Xzu5MxidgabsPT_CiV3G4n0cv3vOB4R4&referrer=https://l.instagram.com/"
+      >
+        <h6 style="color: black; font-weight: 900; font-size: 9.85px" id="book-button-h6" class="text-uppercase">
+          Book Online Now
+        </h6>
+      </a>
+    </button>
+    <button class="call-button" id="scale-up-center" onclick="makePhoneCall()">
+      <h4 style="color: black; margin-top: 5px" id="call-button-h3" class="text-uppercase">
+        <i class="bi bi-telephone-outbound-fill"></i>
+      </h4>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/language-switcher.js"></script>
+  </body>
+</html>
