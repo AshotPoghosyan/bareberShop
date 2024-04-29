@@ -1,45 +1,45 @@
 const servicesData = [
-  { id: "simpleHaircut", nameKey: "HAIRCUT BUZZ", price1: "6.000", price2: "7.000", service: "hair-beard" },
-  { id: "haircutScissors", nameKey: "WITH SCISSORS", price1: "7.000", price2: "8.000", service: "hair-beard" },
-  { id: "haircutMachine", nameKey: "CLIPPER HAIRCUT", price1: "4.000", price2: "5.000", service: "hair-beard" },
-  { id: "*childrens", nameKey: "Children's haircut", price1: "6.000", price2: "7.000", service: "hair-beard" },
-  { id: "beardModel", nameKey: "Haircut beard", price1: "5.000", price2: "6.000", service: "hair-beard" },
+  { id: "simpleHaircut", nameKey: "HAIRCUT BUZZ", price1: "6.000", price2: "7.000", type: "hair-beard" },
+  { id: "haircutScissors", nameKey: "WITH SCISSORS", price1: "7.000", price2: "8.000", type: "hair-beard" },
+  { id: "haircutMachine", nameKey: "CLIPPER HAIRCUT", price1: "4.000", price2: "5.000", type: "hair-beard" },
+  { id: "childrens", nameKey: "Children's haircut", price1: "6.000", price2: "7.000", type: "hair-beard" },
+  { id: "beardModel", nameKey: "Haircut beard", price1: "5.000", price2: "6.000", type: "hair-beard" },
   {
     id: "royalShaveFace",
     nameKey: "Face shave with straight razor",
     price1: "6.000",
     price2: "6.000",
-    service: "hair-beard",
+    type: "hair-beard",
   },
   {
     id: "royalShaveHead",
     nameKey: "Shaving head with straight razor",
     price1: "6.000",
     price2: "6.000",
-    service: "hair-beard",
+    type: "hair-beard",
   },
-  { id: "blowOut", nameKey: "The blowout", price1: "2.000", price2: "3.000", service: "hair-beard" },
+  { id: "blowOut", nameKey: "The blowout", price1: "2.000", price2: "3.000", type: "hair-beard" },
 
   {
     id: "haircutandBeard",
     nameKey: "Haircut and beard trim",
     price1: "10.000",
     price2: "12.000",
-    service: "combination",
+    type: "combination",
   },
   {
     id: "haicutBeardScissors",
     nameKey: "Haircut with scissors and beard",
     price1: "11.000",
     price2: "13.000",
-    service: "combination",
+    type: "combination",
   },
   {
     id: "haircutDadSon",
     nameKey: "Haircut dad and son",
     price1: "11.000",
     price2: "13.000",
-    service: "combination",
+    type: "combination",
   },
 
   {
@@ -47,14 +47,14 @@ const servicesData = [
     nameKey: "Camouflage hair",
     price1: "5.000",
     price2: "5.000",
-    service: "coloring",
+    type: "coloring",
   },
   {
     id: "beardTone",
     nameKey: "Camouflage beard",
     price1: "4.000",
     price2: "5.000",
-    service: "coloring",
+    type: "coloring",
   },
 
   {
@@ -62,36 +62,30 @@ const servicesData = [
     nameKey: "Spa - facial skin care complex",
     price1: "7.000",
     price2: "7.000",
-    service: "spa",
+    type: "spa",
   },
   {
     id: "blackMask",
     nameKey: "Black mask",
     price1: "5.000",
     price2: "5.000",
-    service: "spa",
+    type: "spa",
   },
   {
     id: "patches",
     nameKey: "Patches",
     price1: "2.000",
     price2: "2.000",
-    service: "spa",
+    type: "spa",
   },
   {
     id: "wax",
     nameKey: "Wax hair removal",
     price1: "2.000",
     price2: "2.000",
-    service: "spa",
+    type: "spa",
   },
 ];
-
-//   { id: "beardStyle", nameKey: "BEARD STYLING", price1: "2.000", price2: "2.000" },
-//   { id: "okontovkaHair", nameKey: "HAIR EDGING", price1: "2.000", price2: "3.000" },
-//   { id: "okontovkaBeard", nameKey: "BEARD EDGING", price1: "3.000", price2: "4.000" },
-//   { id: "wax", nameKey: "WAXING", price1: "2.000", price2: "2.000" },
-//   { id: "tattooHair", nameKey: "HAIR TATTOO", price1: "-- --", price2: "2.000" },
 const servicesContainer = document.getElementById("servicesContainer"); // Assuming you have a container element in your HTML with id 'servicesContainer'
 
 servicesData.forEach((service) => {
@@ -120,5 +114,10 @@ servicesData.forEach((service) => {
   serviceDiv.appendChild(serviceName);
   serviceDiv.appendChild(pricesDiv);
 
-  servicesContainer.appendChild(serviceDiv);
+  if (service.type !== "hair-beard") {
+    const combinationContainer = document.getElementById("combinationContainer");
+    combinationContainer.appendChild(serviceDiv);
+  } else {
+    servicesContainer.appendChild(serviceDiv);
+  }
 });

@@ -25,14 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const sun = document.getElementById("sun");
 
   const servicesTitle = document.getElementById("services-title");
+  const childrens = document.getElementById("childrens");
   const pricePlanTitle = document.getElementById("price-plan-title");
   const haircutandBeard = document.getElementById("haircutandBeard");
   const haicutBeardScissors = document.getElementById("haicutBeardScissors");
-  const royalShave = document.getElementById("royalShave");
   const haircutDadSon = document.getElementById("haircutDadSon");
-  const toneBeardandHair = document.getElementById("toneBeardandHair");
-  const complexHaircutTone = document.getElementById("complexHaircutTone");
-  const okontovkaBeardHair = document.getElementById("okontovkaBeardHair");
+
   const simpleHaircut = document.getElementById("simpleHaircut");
   const haircutMachine = document.getElementById("haircutMachine");
   const haircutScissors = document.getElementById("haircutScissors");
@@ -42,14 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const hairTone = document.getElementById("hairTone");
   const beardTone = document.getElementById("beardTone");
   const blowOut = document.getElementById("blowOut");
-  const beardStyle = document.getElementById("beardStyle");
-  const okontovkaHair = document.getElementById("okontovkaHair");
-  const okontovkaBeard = document.getElementById("okontovkaBeard");
   const spaFace = document.getElementById("spaFace");
   const blackMask = document.getElementById("blackMask");
   const patches = document.getElementById("patches");
   const wax = document.getElementById("wax");
-  const tattooHair = document.getElementById("tattooHair");
+  // const royalShave = document.getElementById("royalShave");
+  // const toneBeardandHair = document.getElementById("toneBeardandHair");
+  // const complexHaircutTone = document.getElementById("complexHaircutTone");
+  // const okontovkaBeardHair = document.getElementById("okontovkaBeardHair");
+  // const beardStyle = document.getElementById("beardStyle");
+  // const okontovkaHair = document.getElementById("okontovkaHair");
+  // const okontovkaBeard = document.getElementById("okontovkaBeard");
+  // const tattooHair = document.getElementById("tattooHair");
 
   // const priceList = document.getElementById("priceList");
   const bookOnline = document.getElementById("book-button-h6");
@@ -76,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sun: "Sunday",
 
       servicesTitle: "Check Out Our Barber Services And Prices",
+      childrens: "Children's haircut",
       pricePlanTitle: "Price & Plan",
       //կոմպլեքս կտրվածքներ
       haircutandBeard: "HAIRCUT AND BEARD TRIM",
@@ -129,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sun: "Воскресенье",
 
       servicesTitle: "Ознакомьтесь с нашими услугами и ценами парикмахера",
+      childrens: "Детская стрижка",
       pricePlanTitle: "Цены и план",
       // կոմպլեքս կտրվածքներ
       haircutandBeard: "СТРИЖКА И МОДЕЛИРОВАНИЕ БОРОДЫ", //PRO 10000 TOP  14000
@@ -183,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       pricePlanTitle: "Գներ և Ծառայություններ",
       servicesTitle: "ԾԱՆՈԹԱՑԵՔ ՄԵՐ ԲԱՐԲԵՐՆԵՐԻ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐԻ ԵՒ ԳՆԵՐԻ ՀԵՏ",
+      childrens: "Մանկական կտրվածք",
       //կոմպլեքս կտրվածքներ
       haircutandBeard: "ԿՏՐՎԱԾՔ ԵՎ ՄՈՐՈՒՔԻ ՈՒՂՂՈՒՄ",
       haicutBeardScissors: "ԿՏՐՎԱԾՔ ՄԿՐԱՏՈՎ ԵՎ ՄՈՐՈՒՔԻ ՄՈԴԵԼԱՎՈՐՈՒՄ",
@@ -249,14 +254,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       unlockStyle.textContent = translation.unlockStyle;
       servicesTitle.textContent = translation.servicesTitle;
+      childrens.textContent = translation.childrens;
       pricePlanTitle.textContent = translation.pricePlanTitle;
       haircutandBeard.textContent = translation.haircutandBeard;
       haicutBeardScissors.textContent = translation.haicutBeardScissors;
-      royalShave.textContent = translation.royalShave;
       haircutDadSon.textContent = translation.haircutDadSon;
-      toneBeardandHair.textContent = translation.toneBeardandHair;
-      complexHaircutTone.textContent = translation.complexHaircutTone;
-      okontovkaBeardHair.textContent = translation.okontovkaBeardHair;
       simpleHaircut.textContent = translation.simpleHaircut;
       haircutMachine.textContent = translation.haircutMachine;
       haircutScissors.textContent = translation.haircutScissors;
@@ -266,18 +268,22 @@ document.addEventListener("DOMContentLoaded", function () {
       hairTone.textContent = translation.hairTone;
       beardTone.textContent = translation.beardTone;
       blowOut.textContent = translation.blowOut;
-      beardStyle.textContent = translation.beardStyle;
-      okontovkaHair.textContent = translation.okontovkaHair;
-      okontovkaBeard.textContent = translation.okontovkaBeard;
       spaFace.textContent = translation.spaFace;
       blackMask.textContent = translation.blackMask;
       patches.textContent = translation.patches;
       wax.textContent = translation.wax;
-      tattooHair.textContent = translation.tattooHair;
       bookOnline.textContent = translation.bookOnline;
       complex.textContent = translation.complex;
       getInTouch.textContent = translation.getInTouch;
       address.textContent = translation.address;
+      // royalShave.textContent = translation.royalShave;
+      // toneBeardandHair.textContent = translation.toneBeardandHair;
+      // complexHaircutTone.textContent = translation.complexHaircutTone;
+      // okontovkaBeardHair.textContent = translation.okontovkaBeardHair;
+      // beardStyle.textContent = translation.beardStyle;
+      // okontovkaHair.textContent = translation.okontovkaHair;
+      // okontovkaBeard.textContent = translation.okontovkaBeard;
+      // tattooHair.textContent = translation.tattooHair;
     }
 
     localStorage.setItem("userLanguage", language);
@@ -338,18 +344,3 @@ document.addEventListener("DOMContentLoaded", function () {
   updateFlagImage(userLanguage);
   updateDropdown();
 });
-
-// const translationsData = [
-//   {
-//     id: "phone-call-confirmation",
-//     en: "Do you want to call ",
-//     ru: "Вы хотите позвонить ",
-//     am: "Do you want to call ",
-//   },
-//   {
-//     id: "vardanats",
-//     en: "Vardanants",
-//     ru: "ул. Вардананц",
-//     am: "Վարդանանց",
-//   },
-// ];
