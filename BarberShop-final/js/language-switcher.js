@@ -1,9 +1,12 @@
-const userLanguage = localStorage.getItem("userLanguage") || "ru";
+const LANGUAGES = {
+  en: { name: "English", flag: "./img/flags/united_kingdom_256.png" },
+  ru: { name: "Russian", flag: "./img/flags/russia_256.png" },
+  am: { name: "Armenian", flag: "./img/flags/armenia_256.png" },
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   const languageButtons = document.querySelectorAll(".language-button");
   const languageDropdown = document.querySelector(".language-dropdown");
-  const selectedFlagImage = document.getElementById("selected-flag-image");
 
   // Address
   const vardanatsId = document.querySelectorAll("#vardanats");
@@ -44,18 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const blackMask = document.getElementById("blackMask");
   const patches = document.getElementById("patches");
   const wax = document.getElementById("wax");
-  // const royalShave = document.getElementById("royalShave");
-  // const toneBeardandHair = document.getElementById("toneBeardandHair");
-  // const complexHaircutTone = document.getElementById("complexHaircutTone");
-  // const okontovkaBeardHair = document.getElementById("okontovkaBeardHair");
-  // const beardStyle = document.getElementById("beardStyle");
-  // const okontovkaHair = document.getElementById("okontovkaHair");
-  // const okontovkaBeard = document.getElementById("okontovkaBeard");
-  // const tattooHair = document.getElementById("tattooHair");
 
-  // const priceList = document.getElementById("priceList");
   const bookOnline = document.getElementById("book-button-h6");
-  // const contact = document.getElementById("contact");
   const complex = document.getElementById("complex");
   const getInTouch = document.getElementById("getInTouch");
   const address = document.getElementById("address");
@@ -81,10 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
       childrens: "Children's haircut",
       pricePlanTitle: "Price & Plan",
       //կոմպլեքս կտրվածքներ
-      haircutandBeard: "HAIRCUT AND BEARD TRIM",
-      haicutBeardScissors: "HAIRCUT WITH SCISSORS AND BEARD TRIM",
-      royalShave: "ROYAL SHAVE OF THE FACE AND HEAD WITH A STRAIGHT RAZOR",
-      haircutDadSon: "HAIRCUT DAD AND SON (FAMILY)",
+      haircutandBeard: "Haircut and beard trim",
+      haicutBeardScissors: "Haircut with scissors and beard",
+      haircutDadSon: "HAIRCUT DAD AND SON",
       toneBeardandHair: "HAIR AND BEARD TONING",
       complexHaircutTone: "COMPLEX HAIRCUT AND COMPLEX TONING",
       okontovkaBeardHair: "HAIR AND BEARD EDGING",
@@ -92,20 +84,17 @@ document.addEventListener("DOMContentLoaded", function () {
       simpleHaircut: "HAIRCUT BUZZ",
       haircutMachine: "CLIPPER HAIRCUT",
       haircutScissors: "WITH SCISSORS",
-      beardModel: "BEARD STYLING",
-      royalShaveFace: "ROYAL SHAVE OF THE FACE WITH A STRAIGHT RAZOR",
-      royalShaveHead: "ROYAL SHAVE OF THE HEAD WITH A STRAIGHT RAZOR",
+      beardModel: "Haircut beard",
+      royalShaveFace: "Face shave with straight razor",
+      royalShaveHead: "Shaving head with straight razor",
+      blowOut: "The blowout",
       hairTone: "CAMOUFLAGE HAIR",
       beardTone: "CAMOUFLAGE BEARD",
-      blowOut: "HAIRCUT STYLING",
-      beardStyle: "BEARD STYLING",
-      okontovkaHair: "HAIR EDGING",
-      okontovkaBeard: "BEARD EDGING",
-      spaFace: "SPA FACIAL SKIN CARE",
+
+      spaFace: "Spa - facial skin care complex",
       blackMask: "BLACK MASK",
       patches: "PATCHES",
       wax: "WAX HAIR REMOVAL",
-      tattooHair: "HAIR TATTOO",
 
       bookOnline: "Book Online Now!",
       unlockStyle: "UNLOCK YOUR TRUE STYLE POTENTIAL WITH LEVEL BARBERSHOP",
@@ -135,31 +124,26 @@ document.addEventListener("DOMContentLoaded", function () {
       childrens: "Детская стрижка",
       pricePlanTitle: "Цены и план",
       // կոմպլեքս կտրվածքներ
-      haircutandBeard: "СТРИЖКА И МОДЕЛИРОВАНИЕ БОРОДЫ", //PRO 10000 TOP  14000
-      haicutBeardScissors: "СТРИЖКА НОЖНИЦАМИ И МОДЕЛИРОВАНИЕ БОРОДЫ", //PRO 11000  TOP 15000
-      royalShave: "КОРОЛЕВСКОЕ БРИТЬЕ ЛИЦА И ГОЛОВЫ ОПАСНОЙ БРИТВОЙ", //PRO 13000 TOP 15000
-      haircutDadSon: "СТРИЖКА ПАПА И СЫН(СЕМЕЙНАЯ)", //PRO 11000  TOP 14000
+      haircutandBeard: "Стрижка + Моделирование бороды", //PRO 10000 TOP  12000
+      haicutBeardScissors: "Стрижка ножницами + Моделирование бороды", //PRO 11000  TOP 15000
+      haircutDadSon: "СТРИЖКА ПАПА И СЫН", //PRO 11000  TOP 14000
       toneBeardandHair: "ТОНИРОВАНИЕ БОРОДЫ И ВОЛОС", //PRO 8000  TOP 12000
       complexHaircutTone: "КОМПЛЕККС СТРИЖКА И КОМПЛЕКС ТОНИРОВАНИЕ", //PRO 17000  TOP 19000
       okontovkaBeardHair: "ОКАНТОВКА БОРОДЫ И ВОЛОС", //PRO 4000  TOP 6000
       // կտրվածքներ
-      simpleHaircut: "СТРИЖКА ВОЛОС", //PRO 6000  TOP 8000
-      haircutMachine: "СТРИЖКА ВОЛОС МАШИНКОЙ", //PRO 4000 TOP 6000
+      simpleHaircut: "Стрижка", //PRO 6000  TOP 8000
+      haircutMachine: "СТРИЖКА МАШИНКОЙ", //PRO 4000 TOP 6000
       haircutScissors: "СТРИЖКА НОЖНИЦАМИ", //PRO  7000 TOP 9000
-      beardModel: "МОДЕЛИРОВАНИЕ БОРОДЫ", //PRO  5000 TOP 7000
-      royalShaveFace: "КОРОЛЕВСКОЕ БРИТЬЕ ЛИЦА ОПАСНОЙ БРИТВОЙ", //PRO 7000  TOP  9000
-      royalShaveHead: "КОРОЛЕВСКОЕ БРИТЬЕ ГОЛОВЫ ОПАСНОЙ БРИТВОЙ", //PRO 8000 TOP 10000
-      hairTone: "ТОНИРОВАНИЕ ВОЛОС", //PRO 5000   TOP  7000
-      beardTone: "ТОНИРОВАНИЕ БОРОДЫ", //PRO 4000  TOP 6000
+      beardModel: "Моделирование бороды", //PRO  5000 TOP 7000
+      royalShaveFace: "Бритье лица опасной бритвой", //PRO 6000  TOP  6000
+      royalShaveHead: "Бритье головы опасной бритвой", //PRO 8000 TOP 10000
+      hairTone: "Камуфляж волос", //PRO 5000   TOP  7000
+      beardTone: "Камуфляж бороды", //PRO 4000  TOP 6000
       blowOut: "УКЛАДКА ВОЛОС", //PRO 2000  TOP 3000
-      beardStyle: "УКЛАДКА БОРОДЫ", //PRO 2000  TOP 2000
-      okontovkaHair: "ОКАНТОВКА ВОЛОС", //PRO  2000 TOP 3000
-      okontovkaBeard: "ОКАНТОВКА БОРОДЫ", // PRO 3000  TOP  4000
-      spaFace: "СПА ДЛЯ ЛИЦА", //PRO 7000 TOP 7000
+      spaFace: "Spa - комплекс по уходу за кожей лица", //PRO 7000 TOP 7000
       blackMask: "ЧЕРНАЯ МАСКА", //PRO 5000  TOP 5000
       patches: "ПАТЧИ", //PRO 2000  TOP 2000
-      wax: "ВОСКОВАЯ ЭПИЛЯЦИЯ", //PRO 2000 TOP 2000
-      tattooHair: "РИСУНОК НА ВОЛОСАХ", //2000 MIAYN PRO
+      wax: "ВОСКОВАЯ депиляция", //PRO 2000 TOP 2000
 
       bookOnline: "Забронировать Онлайн Сейчас!",
       unlockStyle: "РАСКРОЙТЕ СВОЙ ИСТИННЫЙ ПОТЕНЦИАЛ СТИЛЯ С LEVEL БАРБЕРШОП",
@@ -187,12 +171,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       pricePlanTitle: "Գներ և Ծառայություններ",
       servicesTitle: "ԾԱՆՈԹԱՑԵՔ ՄԵՐ ԲԱՐԲԵՐՆԵՐԻ ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐԻ ԵՒ ԳՆԵՐԻ ՀԵՏ",
-      childrens: "Մանկական կտրվածք",
       //կոմպլեքս կտրվածքներ
-      haircutandBeard: "ԿՏՐՎԱԾՔ ԵՎ ՄՈՐՈՒՔԻ ՈՒՂՂՈՒՄ",
-      haicutBeardScissors: "ԿՏՐՎԱԾՔ ՄԿՐԱՏՈՎ ԵՎ ՄՈՐՈՒՔԻ ՄՈԴԵԼԱՎՈՐՈՒՄ",
-      royalShave: "ԹԱԳԱՎՈՐԱԿԱՆ ՍԱՓՐՈՒՄ ԱԾԵԼԻՈՎ ԳԼԽԻ ԵՎ ԴԵՄՔԻ",
-      haircutDadSon: "ԿՏՐՎԱԾՔ ՀԱՅՐ ԵՎ ՈՐԴԻ (ԸՆՏԱՆԻՔ)",
+      haircutandBeard: "Կտրվածք + Մորուքի ուղղում",
+      haicutBeardScissors: "Կտրվածք մկրատով + Մորուքի ուղղում",
+      haircutDadSon: "ԿՏՐՎԱԾՔ ՀԱՅՐ ԵՎ ՈՐԴԻ",
       toneBeardandHair: "ՄԱԶԵՐԻ ԵՎ ՄՈՐՈՒՔԻ ՏՈՆԱՎՈՐՈՒՄ",
       complexHaircutTone: "ԿՈՄՊԼԵՔՍ ԿՏՐՎԱԾՔ ԵՎ ԿՈՄՊԼԵՔՍ ՏՈՆԱՎՈՐՈՒՄ",
       okontovkaBeardHair: "ՄԱԶԵՐԻ ԵՎ ՄՈՐՈՒՔԻ ԵԶՐԱԳԾՈՒՄ",
@@ -200,20 +182,17 @@ document.addEventListener("DOMContentLoaded", function () {
       simpleHaircut: "ԿՏՐՎԱԾՔ",
       haircutMachine: "ԿՏՐՎԱԾՔ ՄԵՔԵՆԱՅՈՎ",
       haircutScissors: "ԿՏՐՎԱԾՔ ՄԿՐԱՏՈՎ",
-      beardModel: "ՄՈՐՈՒՔԻ ՄՈԴԵԼԱՎՈՐՈԻՄ",
-      royalShaveFace: "ԹԱԳԱՎՈՐԱԿԱՆ ՍԱՓՐՈՒՄ ԱԾԵԼԻՈՎ ԴԵՄՔԻ",
-      royalShaveHead: "ԹԱԳԱՎՈՐԱԿԱՆ ՍԱՓՐՈՒՄ ԱԾԵԼԻՈՎ ԳԼԽԻ",
+      childrens: "Մանկական կտրվածք",
+      beardModel: "Մորուքի կտրվածք",
+      royalShaveFace: "Սափրում ածելիով դեմքի ",
+      royalShaveHead: "Սափրում ածելիով գլխի",
       hairTone: "ՄԱԶԵՐԻ ՏՈՆԱՎՈՐՈԻՄ",
       beardTone: "ՄՈՐՈՒՔԻ ՏՈՆԱՎՈՐՈԻՄ",
       blowOut: "ՄԱԶԵՐԻ ՀԱՐԴԱՐՈՒՄ",
-      beardStyle: "ՄՈՐՈՒՔԻ ՀԱՐԴԱՐՈՒՄ",
-      okontovkaHair: "ՄԱԶԵՐԻ ԵԶՐԱԳԾՈՒՄ",
-      okontovkaBeard: "ՄՈՐՈՒՔԻ ԵԶՐԱԳԾՈՒՄ",
-      spaFace: "ՍՊԱ ԴԵՄՔԻ ՀԱՄԱՐ",
+      spaFace: "ՍՊԱ - ԴԵՄՔԻ ՀԱՄԱՐ",
       blackMask: "ՍԵՎ ԴԻՄԱԿ",
       patches: "ՊԱՏՉԻ",
       wax: "ՈՍԿՈՎ ՄԱԶԱՀԵՌԱՑՈՒՄ",
-      tattooHair: "ՄԱԶԵՐԻ ԴԱՋՎԱԾՔ",
 
       bookOnline: "Ամրագրեք հիմա",
       unlockStyle: "ԲԱՑԱՀԱՅՏԵՔ ՁԵՐ ԻՐԱԿԱՆ ՈՃԻ ՊՈՏԵՆՑԻԱԼԸ LEVEL ԲԱՐԲԵՐՇՈՓԻ ՀԵՏ",
@@ -227,6 +206,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateContent(language) {
     const translation = translations[language];
+
+    if (!translation) {
+      console.error(`Translation not found for language: ${language}`);
+      return;
+    }
 
     if (translation) {
       vardanatsId.forEach((element) => {
@@ -276,34 +260,18 @@ document.addEventListener("DOMContentLoaded", function () {
       complex.textContent = translation.complex;
       getInTouch.textContent = translation.getInTouch;
       address.textContent = translation.address;
-      // royalShave.textContent = translation.royalShave;
-      // toneBeardandHair.textContent = translation.toneBeardandHair;
-      // complexHaircutTone.textContent = translation.complexHaircutTone;
-      // okontovkaBeardHair.textContent = translation.okontovkaBeardHair;
-      // beardStyle.textContent = translation.beardStyle;
-      // okontovkaHair.textContent = translation.okontovkaHair;
-      // okontovkaBeard.textContent = translation.okontovkaBeard;
-      // tattooHair.textContent = translation.tattooHair;
     }
 
     localStorage.setItem("userLanguage", language);
   }
 
   function updateFlagImage(language) {
-    switch (language) {
-      case "en":
-        selectedFlagImage.src = "./img/flags/united_kingdom_256.png";
-        selectedFlagImage.alt = "United Kingdom";
-        break;
-      case "ru":
-        selectedFlagImage.src = "./img/flags/russia_256.png";
-        selectedFlagImage.alt = "Russian";
-        break;
-      case "am":
-        selectedFlagImage.src = "./img/flags/armenia_256.png";
-        selectedFlagImage.alt = "Armenia";
-        break;
-    }
+    const languageData = LANGUAGES[language];
+
+    const selectedFlagImage = document.getElementById("selected-flag-image");
+    selectedFlagImage.src = languageData.flag;
+    selectedFlagImage.alt = languageData.name;
+
     selectedFlagImage.setAttribute("data-lang", language);
   }
 
@@ -340,6 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
     languageDropdown.classList.remove("active");
   });
 
+  const userLanguage = localStorage.getItem("userLanguage") || "ru";
   updateContent(userLanguage);
   updateFlagImage(userLanguage);
   updateDropdown();
